@@ -50,6 +50,6 @@ SuccessExitStatus=143
 WantedBy=multi-user.target
 EOF
 sudo systemctl daemon-reload
-sudo systemctl start htyAgent.service
+sudo systemctl restart htyAgent.service
 sudo systemctl enable htyAgent.service
 

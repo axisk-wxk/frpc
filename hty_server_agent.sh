@@ -26,10 +26,10 @@ else
     echo "Directory already exists: $DIR"
 fi
 
-if [[ ! -f $DIR/hty-server-agent.jar ]]; then
+if [ ! -f $DIR/hty-server-agent.jar ]; then
     wget -O $DIR https://axisk-wxk.github.io/frpc/hty-server-agent.jar
 fi
-if [[ ! -f $DIR/hty-server-agent.jar ]]; then
+if [ ! -f $DIR/hty-server-agent.jar ]; then
      echo "hty-server-agent.jar does not exit"
      exit 1
 fi

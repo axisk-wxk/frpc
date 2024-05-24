@@ -43,7 +43,7 @@ After=network.target
 [Service]
 Type=simple
 WorkingDirectory=/etc/hty
-ExecStart=java -jar /etc/hty/hty-server-agent.jar $1 > /etc/hty/agent.log 2>&1
+ExecStart=java -jar /etc/hty/hty-server-agent.jar $1 
 SuccessExitStatus=143
  
 [Install]

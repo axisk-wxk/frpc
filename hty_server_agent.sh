@@ -35,9 +35,9 @@ if [ ! -f $DIR/hty-server-agent.jar ]; then
      exit 1
 fi
 
-cat <<EOF> /etc/systemd/system/hty_server.service
+cat <<EOF> /etc/systemd/system/htyAgent.service
 [Unit]
-Description=hty server startup script
+Description=hty server agent startup script
 After=network.target
 
 [Service]
@@ -50,6 +50,6 @@ SuccessExitStatus=143
 WantedBy=multi-user.target
 EOF
 sudo systemctl daemon-reload
-sudo systemctl start hty_server.service
-sudo systemctl enable hty_server.service
+sudo systemctl start htyAgent.service
+sudo systemctl enable htyAgent.service
 

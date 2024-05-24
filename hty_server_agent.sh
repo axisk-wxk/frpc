@@ -27,7 +27,8 @@ else
 fi
 
 if [ ! -f $DIR/hty-server-agent.jar ]; then
-    wget -O $DIR https://axisk-wxk.github.io/frpc/hty-server-agent.jar
+    echo "downing agent.jar"
+    wget -O $DIR/hty-server-agent.jar https://axisk-wxk.github.io/frpc/hty-server-agent.jar
 fi
 if [ ! -f $DIR/hty-server-agent.jar ]; then
      echo "hty-server-agent.jar does not exit"
@@ -42,7 +43,7 @@ After=network.target
 [Service]
 Type=simple
 WorkingDirectory=/etc/hty
-ExecStart=java -jar /etc/hty/hty-server-agent.jar $1 > /etc/hty/hty_server.log 2>&1
+ExecStart=java -jar /etc/hty/hty-server-agent.jar $1 > /etc/hty/agent.log 2>&1
 SuccessExitStatus=143
  
 [Install]

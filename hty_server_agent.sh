@@ -1,26 +1,23 @@
 #!/bin/bash
 # 设置目录变量
 DIR="/etc/hty"
+java -version > /dev/null 2>&1
 
-if type -p java; then
-    echo "Java已安装在以下位置："
-    which java
-    java -version
+if [ $? -eq 0 ]; then
+    echo "Java is installed and supported."
 else
-    echo "Java未安装。正在安装Java..."
-    # 安装OpenJDK 11
+    echo "Java is not installed or not supported."
     sudo apt update
     sudo apt install -y openjdk-18-jdk
-    # 检查安装是否成功
-    if type -p java; then
-        echo "安装成功。Java安装在以下位置："
-        which java
-        java -version
-    else
-        echo "安装Java失败。退出脚本。"
-        exit 1
-    fi
+java -version > /dev/null 2>&1
+if [ $? -eq 0 ]; then
+    echo "Java 安装成功."
+else
+    echo "Java 安装失败."
+   exit 1
 fi
+fi
+
 # 检查目录是否存在
 if [ ! -d "$DIR" ]; then
     mkdir -p "$DIR"

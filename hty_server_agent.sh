@@ -8,7 +8,7 @@ if [ $? -eq 0 ]; then
 else
     echo "Java is not installed or not supported."
     sudo apt update
-    sudo apt install -y openjdk-18-jdk
+    sudo apt install -y openjdk-8-jdk
 java -version > /dev/null 2>&1
 if [ $? -eq 0 ]; then
     echo "Java 安装成功."

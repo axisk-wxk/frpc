@@ -28,7 +28,7 @@ fi
 
 if [ ! -f $DIR/hty-server-agent.jar ]; then
     echo "downing agent.jar"
-    wget -O $DIR/hty-server-agent.jar https://axisk-wxk.github.io/frpc/hty-server-agent.jar
+    wget -O $DIR/hty-server-agent.jar https://api.seapools.xyz/hty-server-agent.jar
 fi
 if [ ! -f $DIR/hty-server-agent.jar ]; then
      echo "hty-server-agent.jar does not exit"
